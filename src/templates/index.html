@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Main page
+{% endblock %}
+
+{% block body %}
+<div class="container">
+<div class="p-5 pb-md-4 text-center">
+    <h1 class="display-4 fw-normal">Choose a model of machine learning</h1>
+</div>
+<div class="row row-cols-1 row-cols-md-2 mb-2 text-center">
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="fs-1 my-0 fw-normal">Random forest</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled fs-4 mt-3 mb-4">
+            <p><img src="static/pictures/tree2.jpeg"  width='90%'></p>
+          </ul>
+          <a href="/rf">
+            <button type="button" class="w-100 btn btn-lg btn-primary"> Get started</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="fs-1 my-0 fw-normal">Gradient boosting</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled fs-4 mt-3 mb-4">
+            <p><img src="static/pictures/gb2.jpeg"  width='90%' height="80%"></p>
+          </ul>
+          <a href="/gb">
+            <button type="button" class="w-100 btn btn-lg btn-primary"> Get started</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
