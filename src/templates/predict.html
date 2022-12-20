@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Result
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>...the prediction completed</h1>
+</div>
+
+<form method="POST" action="">
+    <div class="form-row">
+        <br>
+        <div class="form-group col-md-6" style="margin-left: 20px">
+            <label class="fs-4">RMSE for test: </label>
+
+            {{ form.score }}
+        </div>
+
+        <br>
+        <div class="form-group col-md-6" style="margin-left: 20px">
+            <label class="fs-4">Download predictions: </label>
+
+            {{ form.pred }}
+        </div>
+
+        <br>
+        <div class="form-group col-md-6" style="margin-left: 20px">
+            <label class="fs-4">Download training data: </label>
+
+            {{ form.X_train }}
+        </div>
+
+        <br>
+        <div class="form-group col-md-6" style="margin-left: 20px">
+            <label class="fs-4">Download training target: </label>
+
+            {{ form.y_train }}
+        </div>
+
+        <br>
+        <div class="form-group col-md-6" style="margin-left: 20px">
+            <label class="fs-4">Download test data:  </label>
+
+            {{ form.X_train }}
+        </div>
+
+        <br>
+        <div class="form-group col-md-6" style="margin-left: 20px">
+            <label class="fs-4">Download test target: </label>
+
+            {{ form.y_test }}
+        </div>
+
+        <br>
+        <div class="form-group col-md-6" style="margin-left: 20px">
+            <label class="fs-4">See params: </label>
+
+            {{ form.params }}
+        </div>
+
+        <br>
+        <div class="form-group col-md-6" style="margin-left: 20px">
+            <label class="fs-4">Download RMSE on train data for each iteration</label>
+
+            {{ form.n_rmse_train }}
+        </div>
+
+        <br>
+        <div class="form-group col-md-6" style="margin-left: 20px">
+            <label class="fs-4">Download RMSE on test data for each iteration</label>
+
+            {{ form.n_rmse_test }}
+        </div>
+
+
+        <br>
+        <div class="form-group" style="margin-left: 20px">
+            {{ form.submit(class="btn btn-primary")}}
+        </div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Random forest
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Set values for hyperparameters of random forest</h1>
+</div>
+
+<form method="POST" action="">
+    <div class="form-row">
+        <br>
+        
+        <form action="" method="post" class="form" enctype="multipart/form-data" role="form">
+            <input type=file>
+            {{ form.csrf_token() }}
+            <label class="fs-4">Choose training dataset: </label>
+
+            {{ form.X_train }}
+
+            {% for field, errors in form.errors.items() %}
+            <small class="form-text text-muted ">
+            {{ ', '.join(errors) }}
+            </small>
+            {% endfor %}
+        </form>
+
+        <br>
+        <div class="form-group col-md-6" style="margin-left: 20px">
+            {{ form.csrf_token() }}
+            <label class="fs-4">Choose target variable for training dataset: </label>
+
+            {{ form.y_train }}
+
+            {% for field, errors in form.errors.items() %}
+            <small class="form-text text-muted ">
+            {{ ', '.join(errors) }}
+            </small>
+            {% endfor %}
+        </div>
+
+        <br>
+        <div class="form-group col-md-6" style="margin-left: 20px">
+            {{ form.csrf_token() }}
+            <label class="fs-4">Choose test dataset: </label>
+
+            {{ form.X_test }}
+
+            {% for field, errors in form.errors.items() %}
+            <small class="form-text text-muted ">
+            {{ ', '.join(errors) }}
+            </small>
+            {% endfor %}
+        </div>
+
+        <br>
+        <div class="form-group col-md-6" style="margin-left: 20px">
+            {{ form.csrf_token() }}
+            <label class="fs-4">Choose target variable for test dataset: </label>
+
+            {{ form.y_test }}
+
+            {% for field, errors in form.errors.items() %}
+            <small class="form-text text-muted ">
+            {{ ', '.join(errors) }}
+            </small>
+            {% endfor %}
+        </div>
+
+        <br>
+        <div class="form-group col-md-6" style="margin-left: 20px">
+            {{ form.csrf_token() }}
+            <label class="fs-4">Set the number of trees: </label>
+
+            {{ form.n_estimators }}
+
+            {% for field, errors in form.errors.items() %}
+            <small class="form-text text-muted ">
+            {{ ', '.join(errors) }}
+            </small>
+            {% endfor %}
+        </div>
+
+        <br>
+        <div class="form-group col-md-6" style="margin-left: 20px">
+            {{ form.csrf_token() }}
+            <label class="fs-4">Set the max depth of trees: </label>
+
+            {{ form.max_depth }}
+
+            {% for field, errors in form.errors.items() %}
+            <small class="form-text text-muted ">
+            {{ ', '.join(errors) }}
+            </small>
+            {% endfor %}
+        </div>
+
+        <br>
+        <div class="form-group col-md-6" style="margin-left: 20px">
+            {{ form.csrf_token() }}
+            <label class="fs-4">Set the size of feature subsample: </label>
+
+            {{ form.feature_subsample_size }}
+
+            {% for field, errors in form.errors.items() %}
+            <small class="form-text text-muted ">
+            {{ ', '.join(errors) }}
+            </small>
+            {% endfor %}
+        </div>
+
+        <br>
+        <div class="form-group" style="margin-left: 20px">
+            {{ form.submit(class="btn btn-primary")}}
+        </div>
+    </div>
+</form>
+{% endblock %}
