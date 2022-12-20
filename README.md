@@ -1,1 +1,3 @@
-# ML-server
+This ML-system allows you to train machine learning models, namely gradient boosting and random forest. Using the server does not require knowledge of any programming languages and machine learning models. The only thing you need is data.
+First, you are asked to choose which model you want to use. Next, you need to load the training and test sets along with the corresponding targets. Hyperparameters must be specified for the selected model, otherwise the default parameters will be used.
+When the model is trained, you will be able to download the prediction file, download the RMSE for each iteration and other functions specified on the server.
